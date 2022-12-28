@@ -1,0 +1,7 @@
+*.jou
+*.log
+*.pb
+*.wdb
+*.timestamp
+xsim.dir
+*.vcd

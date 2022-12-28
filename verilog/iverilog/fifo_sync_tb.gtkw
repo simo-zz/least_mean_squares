@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+[*] Thu Sep 15 09:02:42 2022
+[*]
+[dumpfile] "/customdevs/verilog/fifo_sync.github/iverilog/fifo_sync_tb.vcd"
+[dumpfile_mtime] "Thu Sep 15 09:02:19 2022"
+[dumpfile_size] 7535
+[savefile] "/customdevs/verilog/fifo_sync.github/iverilog/fifo_sync_tb.gtkw"
+[timestart] 7430
+[size] 1280 631
+[pos] -1 -1
+*-13.000000 11500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] fifo_sync_tb.
+[sst_width] 207
+[signals_width] 304
+[sst_expanded] 1
+[sst_vpaned_height] 164
+@28
+fifo_sync_tb.fifo_sync_inst.clk_i
+fifo_sync_tb.fifo_sync_inst.fifo_empty
+fifo_sync_tb.fifo_sync_inst.fifo_full
+@24
+fifo_sync_tb.data_in_r[7:0]
+[color] 2
+fifo_sync_tb.fifo_sync_inst.data_in[7:0]
+[color] 3
+fifo_sync_tb.fifo_sync_inst.data_out[7:0]
+@22
+fifo_sync_tb.fifo_sync_inst.w_ptr_r[3:0]
+fifo_sync_tb.fifo_sync_inst.r_ptr_r[3:0]
+@28
+fifo_sync_tb.fifo_sync_inst.w_en_r
+fifo_sync_tb.fifo_sync_inst.r_en_r
+@24
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[0][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[1][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[2][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[3][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[4][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[5][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[6][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[7][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[8][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[9][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[10][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[11][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[12][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[13][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[14][7:0]
+fifo_sync_tb.fifo_sync_inst.\fifo_mem_reg[15][7:0]
+[pattern_trace] 1
+[pattern_trace] 0

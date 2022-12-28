@@ -1,0 +1,9 @@
+*.jou
+*.log
+*.pb
+*.wdb
+*.timestamp
+*.vcd
+*.pdf
+output/
+
