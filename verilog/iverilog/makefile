@@ -1,29 +1,33 @@
 IVERILOG := iverilog
-VVP = "vvp"
+VVP = vvp
 GTKWAVE := gtkwave
 
 SRC_DIR = "../src/"
-VERILOG_SRC_DIR = $(SRC_DIR)"verilog"
 
-VERILOG_SRC = $(shell find $(VERILOG_SRC_DIR) -name '*.v')
+VERILOG_SRC = $(shell find $(SRC_DIR) -name '*.v')
 TB_FILE = $(filter %_tb.v,$(VERILOG_SRC))
 VCD_OUTPUT = $(notdir $(TB_FILE:.v=.vcd))
 GTKW_OUTPUT = $(notdir $(TB_FILE:.v=.gtkw))
-	
+
 .PHONY: all compile run clean
 
 all: clean compile run
 
 compile:
 	@echo "Compiling verilog"
+	@echo "VCD_OUTPUT = $(VCD_OUTPUT)"
 	@if [ ! -e $(GTKW_OUTPUT) ]; then \
 		touch $(GTKW_OUTPUT); \
 	fi
 	$(IVERILOG) $(VERILOG_SRC) -o $(VCD_OUTPUT)
-	$(VVP) $(VCD_OUTPUT)
+	@if [ -e $(VCD_OUTPUT) ]; then \
+		$(VVP) $(VCD_OUTPUT); \
+	fi
+
 
 run:
 	@echo "Running"
+	@echo "GTKW_OUTPUT = $(GTKW_OUTPUT)"
 	@if [ -e $(VCD_OUTPUT) ]; then \
 		$(GTKWAVE) $(VCD_OUTPUT) $(GTKW_OUTPUT); \
 	else  \
@@ -31,4 +35,4 @@ run:
 	fi
 
 clean:
-	@rm -fr *.vcd
+	rm -fr $(VCD_OUTPUT)

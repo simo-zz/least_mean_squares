@@ -9,7 +9,7 @@ uLMSDen=2^(Nbits-1)
 
 %% Variables definitions 4 
 % Total samples
-N = 500;
+N = 2000;
 
 % samples index vector
 n = 1:N;
@@ -50,25 +50,34 @@ xtmp = zeros(M,  1);
 wLMS = zeros(M,  1);
 
 % LMS error and output vector.Use it to update y vector of size N
-eLMS = zeros(M, 1);
-yLMS = zeros(M, 1); 
+eLMS = ones(M, 1).*MaxVal;
+yLMS = 0; 
 uLMS = 1./uLMSDen
 
 fig = figure(); 
 C = jet(N);
 kc = linspace(0.25, 1, N); 
 
+fp = fopen('w.txt','w');
+
 for k = n
 
     dtmp = d(k); 
     xtmp = [x(k); xtmp(1:M-1)];
     yLMS = transpose(wLMS)*xtmp;
-    yLMS = yLMS;
     eLMS = dtmp-yLMS;
     y(k) = yLMS;
     err(k) = eLMS;
     wLMS = floor(wLMS + uLMS .* eLMS .* xtmp);
     
+    for kw = 1:length(wLMS)
+        if (kw < length(wLMS))
+            fprintf(fp, "%d,", wLMS(kw));
+        else
+            fprintf(fp, "%d\n", wLMS(kw));
+        end
+    end
+
     if (isnan(wLMS))
        disp(['Nan at k = ' num2str(k)]);
        break;
@@ -77,6 +86,8 @@ for k = n
     plot(m, wLMS, 'LineWidth', 2, 'Color', kc(k).*C(k, :)); grid on; hold on;
 
  end
+
+fclose(fp);
 
 scatter(m, s, 100, 'MarkerFaceColor', [1 0.95 0.2], 'MarkerEdgeColor',  [1 0 0]);
 hold on;
@@ -98,7 +109,7 @@ subplot(5, 1, 4)
 plot(n, y, 'LineWidth', 2, 'Color', [0 1 0]); grid on;
 legend('y = Adaptive filter output');
 subplot(5, 1, 5)
-plot(n, err, 'LineWidth', 2, 'Color', [1 0 0]); grid on;
+stem(n, err, 'LineWidth', 2, 'Color', [1 0 0]); grid on;
 legend('e = d - y = Error');
 print('data_plots.png', '-dpng');
 waitfor(fig);
@@ -109,3 +120,17 @@ disp([s,  wLMS]);
 disp(['y bits = ' num2str(ceil(log2(max(abs(y)))))]);
 disp(['err bits = ' num2str(ceil(log2(max(abs(err)))))]);
 disp(['wLMS bits = ' num2str(ceil(log2(max(abs(wLMS)))))]);
+
+disp(['x(1) = ' num2str(x(1))]);
+disp(['d(1) = ' num2str(d(1))]);
+disp(['y(1) = ' num2str(y(1))]);
+disp(['err(1) = ' num2str(err(1))]);
+
+% fp = fopen('xdye.txt','w'); fprintf(fp, "%d,%d\n", x, d, y, err); fclose(fp);
+M = int32([x, d, y, err]);
+csvwrite('xdye.txt', M);
+
+fp = fopen('s.txt','w');
+fprintf(fp, "%d\n", round(s));
+fclose(fp);
+

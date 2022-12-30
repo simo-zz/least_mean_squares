@@ -1,6 +1,4 @@
 SRC_DIR = "../../src/"
-VERILOG_SRC_DIR = $(SRC_DIR)"verilog"
-SYSTEM_VERILOG_SRC_DIR = $(SRC_DIR)"system_verilog"
 
 OUTPUT_DIR = output
 TCL_SOURCE = $(wildcard *.tcl)
@@ -11,10 +9,10 @@ mode := tcl
 VIVADO := vivado
 VIVADO_NO_LOG_NO_JOURNAL_OPTION := -nolog -nojournal
 
-MODULE_TO_SYNTH = fifo_sync.v
+MODULE_TO_SYNTH = lms_filter.v
 TOP_NAME = $(MODULE_TO_SYNTH:.v=)
 
-SOURCES_V := $(shell find $(VERILOG_SRC_DIR) -name $(MODULE_TO_SYNTH))
+SOURCES_V := $(shell find $(SRC_DIR) -name $(MODULE_TO_SYNTH))
 
 .PHONY : all synthesize clean
 

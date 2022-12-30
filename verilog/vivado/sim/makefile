@@ -1,9 +1,7 @@
 SRC_DIR = "../../src/"
-VERILOG_SRC_DIR = $(SRC_DIR)"verilog"
-SYSTEM_VERILOG_SRC_DIR = $(SRC_DIR)"system_verilog"
 
-SOURCES_V := $(shell find $(VERILOG_SRC_DIR) -name '*.v')
-SOURCES_SV := $(shell find $(SYSTEM_VERILOG_SRC_DIR) -name '*.sv')
+SOURCES_V := $(shell find $(SRC_DIR) -name '*.v')
+SOURCES_SV := $(shell find $(SRC_DIR) -name '*.sv')
 
 COMP_OPTS_SV := \
     --incr \
@@ -12,7 +10,7 @@ COMP_OPTS_SV := \
 DEFINES_SV :=
 COMP_OPTS_VHDL := --incr --relax
 
-TB_TOP := $(basename $(notdir $(shell find $(VERILOG_SRC_DIR) -name '*_tb')))
+TB_TOP := $(basename $(notdir $($(filter '*_tb',$(SOURCES_V)))))
 
 .PHONY : all simulate elaborate compile waves clean
 
@@ -57,6 +55,7 @@ ifeq ($(SOURCES_V),)
 else
 .comp_v.timestamp : $(SOURCES_V)
 	@echo "Compiling Verilog sources"
+	@echo "TB_TOP = $(TB_TOP)"
 	xvlog --nolog $(COMP_OPTS_V) $(DEFINES_V) $(SOURCES_V)
 	touch .comp_v.timestamp
 endif
