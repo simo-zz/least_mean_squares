@@ -16,7 +16,7 @@
 
 module n_adder #(
 
-        parameter DATA_WIDTH = 12
+        parameter DATA_WIDTH = 32
     )
     (
         input signed [DATA_WIDTH-1:0] data_a,
@@ -30,7 +30,7 @@ endmodule
 
 module n_mult #(
 
-        parameter DATA_WIDTH = 12
+        parameter DATA_WIDTH = 32
     )
     (
         input signed [DATA_WIDTH-1:0] data_a,
@@ -44,8 +44,8 @@ endmodule
 
 module lms_filter
     #(
-        parameter DATA_WIDTH = 12,
-        parameter MU_BITS = 12,
+        parameter DATA_WIDTH = 32,
+        parameter MU_BITS = 16,
         parameter FILTER_ORDER = 5
     )
     (
