@@ -1,0 +1,129 @@
+[*]
+[*] GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+[*] Fri Dec 30 16:17:28 2022
+[*]
+[dumpfile] "/customdevs/least_mean_squares.github/verilog/iverilog/lms_filter_tb.vcd"
+[dumpfile_mtime] "Fri Dec 30 16:16:45 2022"
+[dumpfile_size] 2956944
+[savefile] "/customdevs/least_mean_squares.github/verilog/iverilog/lms_filter_tb.gtkw"
+[timestart] 5160
+[size] 1366 679
+[pos] -1 -1
+*-12.000000 11500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] lms_filter_tb.
+[sst_width] 292
+[signals_width] 300
+[sst_expanded] 1
+[sst_vpaned_height] 181
+@420
+lms_filter_tb.lms_filter_inst.d_reg[31:0]
+[color] 3
+lms_filter_tb.lms_filter_inst.\x_reg[0][31:0]
+[color] 3
+lms_filter_tb.lms_filter_inst.\x_reg[1][31:0]
+[color] 3
+lms_filter_tb.lms_filter_inst.\x_reg[2][31:0]
+[color] 3
+lms_filter_tb.lms_filter_inst.\x_reg[3][31:0]
+[color] 3
+lms_filter_tb.lms_filter_inst.\x_reg[4][31:0]
+[color] 2
+lms_filter_tb.lms_filter_inst.d_reg[31:0]
+[color] 1
+lms_filter_tb.yt_r[31:0]
+@18420
+lms_filter_tb.errt_r[31:0]
+lms_filter_tb.lms_filter_inst.e_w[31:0]
+@c00420
+[color] 7
+lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+@28
+[color] 7
+(0)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(1)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(2)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(3)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(4)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(5)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(6)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(7)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(8)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(9)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(10)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(11)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(12)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(13)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(14)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(15)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(16)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(17)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(18)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(19)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(20)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(21)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(22)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(23)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(24)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(25)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(26)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(27)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(28)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(29)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(30)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+[color] 7
+(31)lms_filter_tb.lms_filter_inst.\w_reg[0][31:0]
+@1401200
+-group_end
+@420
+[color] 7
+lms_filter_tb.lms_filter_inst.\w_reg[1][31:0]
+[color] 7
+lms_filter_tb.lms_filter_inst.\w_reg[2][31:0]
+[color] 7
+lms_filter_tb.lms_filter_inst.\w_reg[3][31:0]
+[color] 7
+lms_filter_tb.lms_filter_inst.\w_reg[4][31:0]
+lms_filter_tb.lms_filter_inst.\xw_mult_w[0][31:0]
+lms_filter_tb.lms_filter_inst.\xw_mult_w[1][31:0]
+lms_filter_tb.lms_filter_inst.\xw_mult_w[2][31:0]
+lms_filter_tb.lms_filter_inst.\xw_mult_w[3][31:0]
+lms_filter_tb.lms_filter_inst.\xw_mult_w[4][31:0]
+lms_filter_tb.lms_filter_inst.\yx_csum_w[0][31:0]
+lms_filter_tb.lms_filter_inst.\yx_csum_w[1][31:0]
+lms_filter_tb.lms_filter_inst.\yx_csum_w[2][31:0]
+lms_filter_tb.lms_filter_inst.\yx_csum_w[3][31:0]
+@421
+[color] 1
+lms_filter_tb.lms_filter_inst.y_out[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
