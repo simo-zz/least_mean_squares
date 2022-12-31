@@ -51,11 +51,11 @@ module lms_filter
     (
         (* direct_reset = "true" *) input wire reset,
         (* direct_enable = "true" *) input wire clk,
-        input wire [DATA_WIDTH-1:0] d_in,
-        input wire [DATA_WIDTH-1:0] x_in,
-        input wire [DATA_WIDTH-1:0] y_in, 
-        output wire [DATA_WIDTH-1:0] y_out,
-        output wire [DATA_WIDTH-1:0] err_out
+        input wire signed[DATA_WIDTH-1:0] d_in,
+        input wire signed[DATA_WIDTH-1:0] x_in,
+        input wire signed[DATA_WIDTH-1:0] y_in,
+        output wire signed[DATA_WIDTH-1:0] y_out,
+        output wire signed[DATA_WIDTH-1:0] err_out
         // output wire in_en
     );
 

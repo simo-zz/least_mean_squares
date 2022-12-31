@@ -2,6 +2,8 @@ clear all;
 close all;
 clc;
 
+xtxt_path = '../../verilog/src/lms_tb/'
+
 Nbits=12;
 MaxVal=2^(Nbits-1)-1
 MinVal=-2^(Nbits-1)
@@ -68,8 +70,9 @@ for k = n
     eLMS = dtmp-yLMS;
     y(k) = yLMS;
     err(k) = eLMS;
-    wLMS = floor(wLMS + uLMS .* eLMS .* xtmp);
-    
+    errLMSx = bitshift(eLMS .* xtmp, -Nbits-1);
+    % wLMS = floor(wLMS + uLMS .* eLMS .* xtmp);
+    wLMS = round(wLMS + errLMSx);
     for kw = 1:length(wLMS)
         if (kw < length(wLMS))
             fprintf(fp, "%d,", wLMS(kw));
@@ -121,16 +124,19 @@ disp(['y bits = ' num2str(ceil(log2(max(abs(y)))))]);
 disp(['err bits = ' num2str(ceil(log2(max(abs(err)))))]);
 disp(['wLMS bits = ' num2str(ceil(log2(max(abs(wLMS)))))]);
 
+%{
 disp(['x(1) = ' num2str(x(1))]);
 disp(['d(1) = ' num2str(d(1))]);
 disp(['y(1) = ' num2str(y(1))]);
 disp(['err(1) = ' num2str(err(1))]);
 
-% fp = fopen('xdye.txt','w'); fprintf(fp, "%d,%d\n", x, d, y, err); fclose(fp);
-M = int32([x, d, y, err]);
-csvwrite('xdye.txt', M);
+fp = fopen([xtxt_path 'xdye.txt'],'w'); fprintf(fp, "%d,%d\n", x, d, y, err); fclose(fp);
+%}
 
-fp = fopen('s.txt','w');
+M = int32([x, d, y, err]);
+csvwrite([xtxt_path 'xdye.txt'], M);
+
+fp = fopen([xtxt_path 's.txt'],'w');
 fprintf(fp, "%d\n", round(s));
 fclose(fp);
 
